@@ -28,7 +28,7 @@ export default {
     this.$http.get("categorias/all").then(result => {
         this.categorias = result.data;
     }, error => {
-        Toaster.makeText('Any categorie found :(').show()
+        Toaster.makeText('Any category found :(').show()
     });
   },
   components:{

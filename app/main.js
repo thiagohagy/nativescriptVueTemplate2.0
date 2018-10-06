@@ -17,4 +17,4 @@ Vue.registerElement('RadSideDrawer', () => require('nativescript-ui-sidedrawer')
 
 new Vue({
   render: h => h('frame', [h(App)])
-}).$start()
+}).$start();

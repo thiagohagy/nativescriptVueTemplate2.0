@@ -1,5 +1,4 @@
 import * as  applicationSettings from 'application-settings'
-import Login from './../components/auth/Login'
 
 const state = {
   IS_LOGGED: false,
