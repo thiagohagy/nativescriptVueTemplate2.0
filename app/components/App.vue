@@ -9,7 +9,7 @@
     </StackLayout>
     
     <Frame ~mainContent>
-      <home></home>      
+      <login></login>      
     </Frame>
     
   </RadSideDrawer>
@@ -20,6 +20,8 @@
 
   import Home from './Home';
   import About from './About';
+  import Login from './auth/Login';
+
   import { EventBus } from './../shared/eventBus.js'
 
   export default {
@@ -30,11 +32,16 @@
       }
     },
     components:{
-      'home': Home
+      'login':Login
     },
-    beforeMount(){
+    mounted(){
+
       EventBus.$on('openMenu', () => {
         this.$refs.drawer.nativeView.showDrawer()
+      });
+
+      EventBus.$on('logout', () => {
+        this.$navigateTo(Login);          
       });
     }
   }

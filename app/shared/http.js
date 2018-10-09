@@ -2,18 +2,7 @@ import Vue from 'nativescript-vue'
 import Axios from 'axios/dist/axios'
 import store from './store'
 import Toaster from 'nativescript-toast'
-
-
-// import { LoadingIndicator } from "nativescript-loading-indicator"
-// loading indicator config
-// const loader = new LoadingIndicator();
-// const loaderOptions = {
-//   message: 'Loading...',
-//   android: {
-//     indeterminate: true,
-//     cancelable: true,
-//   }
-// }
+import { EventBus } from './eventBus'
 
 let baseURL = 'http://meusistema.localtunnel.me';
 const axios = Axios.create({
@@ -25,10 +14,14 @@ axios.interceptors.request.use(config => {
 
   config.headers.Authorization = store.getters.authToken();
 
+  console.log(store.getters.authToken())
+  console.log(store.getters.IS_LOGGED)
+
   if (config.url.match(/v1\//gm) && !store.getters.isLogged()) { // if is not a public route  (v1 on url ) and the user is not logged
     Toaster.makeText("You are not logged in").show();
     store.mutations.logout();
-    console.log('not logged');
+  } else {
+    EventBus.$emit('loadingRequestStart');
   }
 
   return config;
@@ -36,11 +29,13 @@ axios.interceptors.request.use(config => {
 
 // request end
 axios.interceptors.response.use(response => {
+  EventBus.$emit('loadingRequestFinish');
   response = response.data;
   return response;
 }, (error) => {
+  EventBus.$emit('loadingRequestFinish');
   Toaster.makeText(error.toString()).show();
-  return response;
+  return error;
 });
 
 const http = {

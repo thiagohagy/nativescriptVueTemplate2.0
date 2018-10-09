@@ -1,11 +1,11 @@
 
 # NativeScript-Vue Application with some ultilities for starting a new app:
 
-<!-- * Auth interceptor to redirect to login page when user is not authenticated -->
 <!-- * Auto login and "keep me logged" option -->
-<!-- * Http interceptor to create authenticated routes -->
-<!-- * Loading indicator that start and stop with http requests -->
 <!-- * Login, register and home page pre built -->
+* Auth interceptor to redirect to login page when user is not authenticated
+* Http interceptor to create authenticated routes
+* Activity Indicator that start and stop with http requests
 * Side Drawer menu
 * Action bar with custom naming of pages
 * Global mixin
