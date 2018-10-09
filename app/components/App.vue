@@ -1,38 +1,41 @@
 <template>
-  <app-wrapper>
-    <ListView for="item in form.categorias">
-      <v-template>
-        <Label :text="item.name" class="listItem"/>
-      </v-template>
-    </ListView>
-  </app-wrapper>
+
+  <RadSideDrawer  ref="drawer">
+
+    <StackLayout ~drawerContent backgroundColor="#ffffff">
+      <Label class="drawer-header" text="Drawer"/>
+      <Label class="drawer-item" @tap='$navigateTo(Home); $refs.drawer.nativeView.closeDrawer()' text="Home"/>
+      <Label class="drawer-item" @tap='$navigateTo(About); $refs.drawer.nativeView.closeDrawer()' text="About"/>
+    </StackLayout>
+    
+    <Frame ~mainContent>
+      <home></home>      
+    </Frame>
+    
+  </RadSideDrawer>
 
 </template>
 
 <script>
 
-import Toast from 'nativescript-toast';
-import Wrapper from './Wrapper';
-import axios from 'axios/dist/axios';
+  import Home from './Home';
+  import About from './About';
+  import { EventBus } from './../shared/eventBus.js'
 
-export default {
-  data(){
-    return {
-      form:{
-        categorias:[]
-      },
+  export default {
+    data() {
+      return {
+        Home: Home,
+        About: About,
+      }
+    },
+    components:{
+      'home': Home
+    },
+    beforeMount(){
+      EventBus.$on('openMenu', () => {
+        this.$refs.drawer.nativeView.showDrawer()
+      });
     }
-  },
-  mounted(){
-    console.log('make request');
-    this.$http.get("categorias/all").then(result => {
-        this.categorias = result.data;
-    }, error => {
-        Toaster.makeText('Any category found :(').show()
-    });
-  },
-  components:{
-    'app-wrapper': Wrapper
   }
-}
 </script>

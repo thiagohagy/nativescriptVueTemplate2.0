@@ -30,6 +30,7 @@ const getters = {
   authToken: () => state.AUTH_TOKEN,
 };
 
+
 export default {
   state,
   getters,

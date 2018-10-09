@@ -2,19 +2,18 @@ import Vue from 'nativescript-vue'
 import Axios from 'axios/dist/axios'
 import store from './store'
 import Toaster from 'nativescript-toast'
-import { LoadingIndicator } from "nativescript-loading-indicator"
 
-  
 
+// import { LoadingIndicator } from "nativescript-loading-indicator"
 // loading indicator config
-const loader = new LoadingIndicator();
-const loaderOptions = {
-  message: 'Loading...',
-  android: {
-    indeterminate: true,
-    cancelable: true,
-  }
-}
+// const loader = new LoadingIndicator();
+// const loaderOptions = {
+//   message: 'Loading...',
+//   android: {
+//     indeterminate: true,
+//     cancelable: true,
+//   }
+// }
 
 let baseURL = 'http://meusistema.localtunnel.me';
 const axios = Axios.create({
