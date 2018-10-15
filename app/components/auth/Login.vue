@@ -5,7 +5,7 @@
       
       <ActivityIndicator col="2" :busy="isBusy" width="70" height="70" color="lightblue" class="activity-indicator"></ActivityIndicator>
 
-      <Image id='logo' src='~/images/NativeScript-Vue.png' width='50%' />
+      <Image id='logo' src='~/assets/images/logo.png' width='50%' />
       <Label id='logoText' textAlignment='center' >My app</Label>
 
       <TextField width='90%' v-model='form.login'    hint='Login...'  />
@@ -34,12 +34,14 @@ import { mapGetters, mapMutations } from 'vuex';
 import { EventBus } from './../../shared/eventBus';
 import Store from './../../shared/store';
 
+import * as  applicationSettings from 'application-settings'
+
 export default {
   data () {
     return {
       Register: Register,
       Home: Home,
-      form:{
+        form:{
         login: 'login',
         password: '123',
         keepLogin: false,
@@ -71,6 +73,15 @@ export default {
       this.isBusy = false;
     });
   },
+  mounted(){
+    let loginData = applicationSettings.getString('login');
+    if (loginData) {
+      loginData = JSON.parse(loginData);
+      this.form.login = loginData.login;
+      this.form.password = loginData.password;
+      this.makeLogin();
+    }
+  }
   
 }
 </script>

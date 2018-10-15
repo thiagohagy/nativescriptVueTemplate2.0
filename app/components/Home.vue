@@ -1,20 +1,37 @@
 <template>
   <Page>
     <my-actionBar pageName='Home'></my-actionBar>
-    <Label>Home</Label>
+    
+    <ListView for="item in categories">
+      <v-template>
+        <Label :text="item.name" class="listItem"/>
+      </v-template>
+    </ListView>
+
   </Page>
 </template>
 
 <script>
 export default {
+  data (){
+    return {
+      categories:[],
+    }
+  },
   mounted() {
-    this.$http.get('/v1/tags/all').then((response) => {
-      console.log('response tags/all comp');
-      console.log(response);
+    this.$http.get('/v1/categoria/all').then((response) => {
+      this.categories = response.data;
     }, (error) => {
-      console.log('response tags/all err');
-      console.log(error);
+      console.log('response category err');
     })
   },
 }
 </script>
+
+<style scoped>
+  .listItem {
+    color: #222;
+    padding: 15;
+  }
+</style>
+

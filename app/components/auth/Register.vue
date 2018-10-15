@@ -4,7 +4,7 @@
 		<StackLayout orientation="vertical" verticalAlignment="center"  class="animate bounceIn">
       <ActivityIndicator col="2" :busy="isBusy" width="70" height="70" color="lightblue" class="activity-indicator"></ActivityIndicator>
 
-      <Image id='logo' src='~/images/logo.png' width='50%' />
+      <Image id='logo' src='~/assets/images/logo.png' width='50%' />
       <Label id='logoText' textAlignment='center' >User registration</Label>
 
       <TextField width='90%' v-model='form.name' hint='Name'  />
