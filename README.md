@@ -34,8 +34,8 @@ tns run <platform> --bundle
 
 Register page              |  Login page               | Drawer menu with links
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/master/screenshots/1.png)  |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/master/screenshots/2.png) |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/master/screenshots/3.png)
+![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/blob/master/screenshots/1.jpeg)  |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/blob/master/screenshots/2.jpeg) |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/blob/master/screenshots/3.jpeg)
 
 Data list at home page     |  About page               |  Loading indicator working at action bar
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/master/screenshots/4.png)  |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/master/screenshots/5.png) |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/master/screenshots/6.png)
+![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/blob/master/screenshots/4.jpeg)  |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/blob/master/screenshots/5.jpeg) |  ![](https://github.com/thiagohagy/NativeScriptVueTemplate2.0/blob/master/screenshots/6.jpeg)
