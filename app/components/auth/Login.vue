@@ -16,6 +16,7 @@
 				<Label text="Keep me logged "></Label>
 			</WrapLayout>
 
+      <Label  horizontalAlignment="center" class="fa"  row="6" col="1" >We have icons too {{ 'fa-heart' | fonticon}}</Label>
 
       <Button class="btn btn-primary" text="Login" @tap="makeLogin" />
       <Button class="btn btn-primary" text="Register" @tap="$navigateTo(Register)" />

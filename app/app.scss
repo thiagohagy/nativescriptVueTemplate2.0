@@ -8,3 +8,18 @@
 
 // Global SCSS styling
 // @see https://docs.nativescript.org/ui/styling
+
+
+ @font-face {
+    font-family: FontAwesome;
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/FontAwesome.ttf');
+}
+
+.far,
+.fa {
+    font-family: FontAwesome;
+    font-weight: 400;
+}
+

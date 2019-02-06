@@ -14,6 +14,8 @@
 
 ## Usage
 
+*  Created using my backend base https://github.com/thiagohagy/nodeVueBoilerplate , but you can use any backend you want
+
 ``` bash
 # Install dependencies
 npm install

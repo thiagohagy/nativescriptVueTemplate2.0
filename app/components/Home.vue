@@ -1,7 +1,7 @@
 <template>
   <Page>
     <my-actionBar pageName='Home'></my-actionBar>
-    
+   
     <ListView for="item in categories">
       <v-template>
         <Label :text="item.name" class="listItem"/>
