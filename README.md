@@ -11,6 +11,7 @@
 * Global mixin
 * Centralized state manager with Vuex
 * Toast notifications
+* Fonticon for nice icons
 
 ## Usage
 
