@@ -15,7 +15,6 @@
 
 ## Usage
 
-*  Created using my backend base https://github.com/thiagohagy/nodeVueBoilerplate , but you can use any backend you want
 
 ``` bash
 # Install dependencies
@@ -29,6 +28,8 @@ tns debug <platform> --bundle
 
 # Build, watch for changes and run the application
 tns run <platform> --bundle
+
+# Created using my backend base https://github.com/thiagohagy/nodeVueBoilerplate , but you can use any backend you want
 ```
 
 
